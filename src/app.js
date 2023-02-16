@@ -15,8 +15,8 @@ app.use(express.json())
 app.use(cors())
 
 // importando os controllers
-const usuarioController = require('./controllers/usuario-controller.js')
-const tarefaController = require('./controllers/tarefa-controller.js')
+const usuarioController = require('./controllers/usuarioController.js')
+const tarefaController = require('./controllers/tarefaController.js')
 
 // Chama as rotas
 usuarioController.rotas(app)
