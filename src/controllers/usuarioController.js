@@ -113,7 +113,7 @@ class usuarioController {
             return
         }
 
-        // Verifica se existem chaves no objeto usuario. OBS: Nessa implementação, da forma que está, a funcionalidade dele não está sendo aproveitada, pois sempre haverão chaves, mesmo que vazias. O que esse método testa é: apenas se há chaves. As chaves são criadas na instancia do objeto new Usuario(req.body.nome, req.body.email, req.body.senha), se os dados não vierem no REQ.BODY, mesmo assim elas irão existir, porém vazias. Ele só está aqui, como demonstração....   
+        // Verifica se existem chaves no objeto usuario. OBS: Nessa implementação, da forma que está, a funcionalidade dele não está sendo aproveitada, pois sempre haverão chaves, mesmo que vazias. O que esse método testa é: apenas se há chaves. As chaves estão sendo criadas ao instanciar um objeto do tipo Usuario() com a palavrinha "new" e ao passarmos e excutarmos a linha new Usuario(req.body.nome, req.body.email, req.body.senha), ainda que os dados não venham no REQ.BODY, mesmo assim elas irão existir, porém vazias. Esse método Object.keys só está aqui, como demonstração.... Seu uso na validação, faz sentido quando NÃO instanciamos um objeto, mas criamos uma constante.   
         if(!Object.keys(usuario).length) {
             res.status(400).send('O objeto está sem chave')
             return
